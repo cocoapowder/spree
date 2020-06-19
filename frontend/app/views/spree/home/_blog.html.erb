@@ -1,0 +1,61 @@
+<%
+  posts = [
+    {
+      image: 'homepage/blog/blog_post_01.jpg',
+      title: 'Title 1',
+      category: 'Category 1',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque non tellus orci ac auctor augue mauris augue neque.',
+      link: '#'
+    },
+    {
+      image: 'homepage/blog/blog_post_02.jpg',
+      title: 'Title 2',
+      category: 'Category 2',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque non tellus orci ac auctor augue mauris augue neque.',
+      link: '#'
+    },
+    {
+      image: 'homepage/blog/blog_post_03.jpg',
+      title: 'Title 3',
+      category: 'Category 3',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque non tellus orci ac auctor augue mauris augue neque.',
+      link: '#'
+    },
+    {
+      image: 'homepage/blog/blog_post_04.jpg',
+      title: 'Title 4',
+      category: 'Category 4',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque non tellus orci ac auctor augue mauris augue neque.',
+      link: '#'
+    },
+    {
+      image: 'homepage/blog/blog_post_05.jpg',
+      title: 'Title 5',
+      category: 'Category 5',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque non tellus orci ac auctor augue mauris augue neque.',
+      link: '#'
+    },
+    {
+      image: 'homepage/blog/blog_post_06.jpg',
+      title: 'Title 6',
+      category: 'Category 6',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque non tellus orci ac auctor augue mauris augue neque.',
+      link: '#'
+    }
+  ]
+%>
+
+<div class="container homepage-blog mb-4">
+  <h3 class="text-center"><%= Spree.t('homepage.blog.title') %></h3>
+  <div class="row">
+    <% posts.each do |post| %>
+      <div class="col-12 col-lg-4 mt-4 text-center text-lg-left">
+        <img class="post-image lazyload" data-src="<%= asset_path(post[:image]) %>" />
+        <span class="post-category"><%= post[:category] %></span>
+        <h4 class="post-title"><%= post[:title] %></h4>
+        <p class="post-description"><%= post[:description] %></p>
+        <a class="post-link" href="<%= post[:link] %>" ><%= Spree.t(:read_more) %></a>
+      </div>
+    <% end %>
+  </div>
+</div>
